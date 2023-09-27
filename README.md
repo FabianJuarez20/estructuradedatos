@@ -1,2 +1,2 @@
 # estructuradedatos
-Crear trabajos de Base de datos.
+Crear trabajos de Estructura de Datos.
