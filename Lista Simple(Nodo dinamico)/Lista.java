@@ -74,9 +74,7 @@ public class Lista {
         for (int i = 1; i < point - 1; i++) {/* se recorre la lista hasta llegar al punto */
             aux = actual;
             actual = actual.next;
-
         }
         aux.next = actual.next;
-
     }
 }

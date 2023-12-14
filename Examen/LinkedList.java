@@ -19,27 +19,31 @@ public class LinkedList {
     }
 
     // Metodo para ordenar lista con recursividad
+    /**
+     * @param start
+     */
     public void seleccionRecursiva(Nodo start) {
         if (start == null || start.next == null) {
             return;
         }
 
-        // Encontrar nodo con valor maximo
-        Nodo maxNodo = start;
+        // Encontrar nodo con valor mínimo
+        Nodo minNodo = start;
         Nodo actual = start.next;
         while (actual != null) {
-            if (actual.data < maxNodo.data) {
-                maxNodo = actual;
+            if (actual.data < minNodo.data) {
+                minNodo = actual;
             }
             actual = actual.next;
         }
 
-        // Intercambiar los valores maximo con primero en lista
+        // Intercambiar los valores mínimos con el primero en la lista
         int temp = start.data;
-        start.data = maxNodo.data;
-        maxNodo.data = temp;
+        start.data = minNodo.data;
+        minNodo.data = temp;
 
-        // Llamada recursiva para ordenar lista
+        // Llamada recursiva para ordenar la lista
         seleccionRecursiva(start.next);
     }
+
 }
