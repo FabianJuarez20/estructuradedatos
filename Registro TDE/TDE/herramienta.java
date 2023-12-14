@@ -97,65 +97,66 @@ public class herramienta {
    Update
     */
     public boolean upadteHerramienta(String nombre, String caracteristica ){
-        Scanner t = new Scanner(System.in);
-        int i = getHerramienta(nombre,caracteristica);
-        if (i != -1){
-            System.out.println("¿Que desea actualizar de la herramienta? "
-                    + "\n| 1.-Nombre | 2.-Marca | 3.-ID | 4.-Colo | 5.-Precio | 6.-Caracteristica |");
-            int opt = t.nextInt();
-            switch (opt){
-                case 1:{
-                    String newNombre;
-                    t.nextLine();
-                    System.out.print("Nuevo nombre: ");
-                    newNombre = t.nextLine();
-                    pb[i].nombre = newNombre;
-                    break;
+        try (Scanner t = new Scanner(System.in)) {
+            int i = getHerramienta(nombre,caracteristica);
+            if (i != -1){
+                System.out.println("¿Que desea actualizar de la herramienta? "
+                        + "\n| 1.-Nombre | 2.-Marca | 3.-ID | 4.-Colo | 5.-Precio | 6.-Caracteristica |");
+                int opt = t.nextInt();
+                switch (opt){
+                    case 1:{
+                        String newNombre;
+                        t.nextLine();
+                        System.out.print("Nuevo nombre: ");
+                        newNombre = t.nextLine();
+                        pb[i].nombre = newNombre;
+                        break;
+                    }
+                    case 2:{
+                        String newMarca;
+                        t.nextLine();
+                        System.out.print("Nueva Marca: ");
+                        newMarca = t.nextLine();
+                        pb[i].marca = newMarca;
+                        break;
+                    }
+                    case 3:{
+                        double newId ;
+                        t.nextLine();
+                        System.out.print("Nuevo ID: ");
+                        newId = t.nextDouble();
+                        pb[i].id = newId;
+                        break;
+                    }
+                    case 4:{
+                        String newColor;
+                        t.nextLine();
+                        System.out.print("Nueva color: ");
+                        newColor = t.nextLine();
+                        pb[i].color = newColor;
+                        break;
+                    }
+                    case 5:{
+                        int newPrecio;
+                        t.nextLine();
+                        System.out.print("Nuevo precio: ");
+                        newPrecio = t.nextInt();
+                        pb[i].precio = newPrecio;
+                        break;
+                    }
+                    case 6:{
+                        String newCaracteristica;
+                        t.nextLine();
+                        System.out.print("Nuevo caracteristica: ");
+                        newCaracteristica = t.nextLine();
+                        pb[i].caracteristica = newCaracteristica;
+                        break;
+                    }
                 }
-                case 2:{
-                    String newMarca;
-                    t.nextLine();
-                    System.out.print("Nueva Marca: ");
-                    newMarca = t.nextLine();
-                    pb[i].marca = newMarca;
-                    break;
-                }
-                case 3:{
-                    double newId ;
-                    t.nextLine();
-                    System.out.print("Nuevo ID: ");
-                    newId = t.nextDouble();
-                    pb[i].id = newId;
-                    break;
-                }
-                case 4:{
-                    String newColor;
-                    t.nextLine();
-                    System.out.print("Nueva color: ");
-                    newColor = t.nextLine();
-                    pb[i].color = newColor;
-                    break;
-                }
-                case 5:{
-                    int newPrecio;
-                    t.nextLine();
-                    System.out.print("Nuevo precio: ");
-                    newPrecio = t.nextInt();
-                    pb[i].precio = newPrecio;
-                    break;
-                }
-                case 6:{
-                    String newCaracteristica;
-                    t.nextLine();
-                    System.out.print("Nuevo caracteristica: ");
-                    newCaracteristica = t.nextLine();
-                    pb[i].caracteristica = newCaracteristica;
-                    break;
-                }
+                return true;
+            }else {
+                System.out.println("Herramienta no encontrada");
             }
-            return true;
-        }else {
-            System.out.println("Herramienta no encontrada");
         }
         return false;
     }

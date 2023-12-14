@@ -2,11 +2,11 @@ import java.util.Scanner;
 public class Metodos{
 
      public static void crearArreglo(int[] arreglo, int n) {
-        Scanner leer = new Scanner(System.in);
-       
-        for (int i = 0; i < n; i++) {
-            System.out.print("Ingrese el elemento " + (i + 1) + " del array: ");
-            arreglo[i] = leer.nextInt();    
+        try (Scanner leer = new Scanner(System.in)) {
+            for (int i = 0; i < n; i++) {
+                System.out.print("Ingrese el elemento " + (i + 1) + " del array: ");
+                arreglo[i] = leer.nextInt();    
+            }
         }
     }
 
